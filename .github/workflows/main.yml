@@ -1,6 +1,6 @@
 name: PHP Test Workflow
 
-on: [push]
+on: [pull_request]
 
 jobs:
   php-test:
@@ -9,7 +9,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Get modified files
+        id: files
+        uses: tj-actions/changed-files@v18
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run PHP Test Action
         uses: degraciamathieu/test-github-action@main
         with:
-          test-input: 'qsdqsdqsdqs'
+          test-input: '.'
