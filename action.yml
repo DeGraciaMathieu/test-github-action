@@ -7,11 +7,10 @@ inputs:
     required: true
     default: 'World'
 
-outputs:
-  time:
-    description: 'output description'
-
 runs:
-  using: 'php'
-  main: 'index.php'
+  using: 'docker'
+  image: 'Dockerfile'
+
+  args:
+    - ${{ inputs.test-input }}
 
