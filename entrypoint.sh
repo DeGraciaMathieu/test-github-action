@@ -1,8 +1,10 @@
-#!/bin/bash
-set -e
+FROM php:8.0-cli
 
-apt-get update && apt-get install -y jq
+COPY index.php /index.php
+COPY entrypoint.sh /entrypoint.sh
 
-files=$(jq -r '.pull_request.files | map(.filename) | join(" ")' "$GITHUB_EVENT_PATH")
+RUN apt-get update && apt-get install -y wget unzip jq
 
-php /index.php "$files"
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
