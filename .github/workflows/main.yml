@@ -1,0 +1,15 @@
+name: PHP Test Workflow
+
+on: [push]
+
+jobs:
+  php-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run PHP Test Action
+        uses: degraciamathieu/test-github-action@main
+        with:
+          test-input: 'qsdqsdqsdqs'
