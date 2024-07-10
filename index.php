@@ -1,5 +1,7 @@
 <?php
 
+var_dump($argv[1]); die;
+
 $phpmetricsUrl = 'https://github.com/phpmetrics/PhpMetrics/releases/download/v2.7.3/phpmetrics.phar';
 
 $phpmetricsPath = '/tmp/phpmetrics.phar';
