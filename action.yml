@@ -20,6 +20,7 @@ runs:
         php-version: '8.1' 
 
     - name: Run PHP script
+      shell: bash
       run: php index.php
       env:
         TEST_INPUT: ${{ inputs.test-input }}
