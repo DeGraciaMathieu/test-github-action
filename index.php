@@ -1,5 +1,5 @@
 <?php
 
-$input = getenv('TEST_INPUT');
+$input = $argv[1];
 
 echo $input;
