@@ -12,6 +12,10 @@ outputs:
     description: 'output description'
 
 runs:
+  using: 'php'
+  main: 'index.php'
+
+runs:
   using: 'composite'
   steps:
     - name: Set up PHP
